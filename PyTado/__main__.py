@@ -6,7 +6,7 @@
 import argparse
 import json
 import logging
-from PyTado.interface import Tado as tado_client
+from PyTado.interface import TadoAC as tado_client
 import sys
 import time
 
