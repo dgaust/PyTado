@@ -32,7 +32,7 @@ setup(name='python-tadoac',
       platforms=["any"],
       packages=find_packages(),
       classifiers=[
-        'Development Status :: 1 - Alpha',
+        'Development Status :: 3 - Alpha',
         'Topic :: Home Automation',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
