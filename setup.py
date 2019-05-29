@@ -19,7 +19,7 @@ readme = open(here('README.md')).read()
 requirements = [x.strip() for x in open(here('requirements.txt')).readlines()]
 
 setup(name='python-tadoac',
-      version='0.0.1',
+      version='0.0.2',
       description='PyTado from chrism0dwk, modfied by w.malgadey, modified by dgaust for AC',
       long_description=readme,
       keywords='tado',
@@ -32,7 +32,7 @@ setup(name='python-tadoac',
       platforms=["any"],
       packages=find_packages(),
       classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 1 - Alpha',
         'Topic :: Home Automation',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
@@ -43,7 +43,7 @@ setup(name='python-tadoac',
       ],
       entry_points={
         'console_scripts': [
-            'pytado = pytado.__main__:main'
+            'PytadoAC = pytado.__main__:main'
         ]
       },
 )
