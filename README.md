@@ -1,8 +1,9 @@
-PyTado -- Pythonize your central heating
+PyTadoAC -- Pythonize your Air Conditioning
 ========================================
 
 Author: Chris Jewell <chrism0dwk@gmail.com>  
 Modified: Wolfgang Malgadey <wolfgang@malgadey.de>
+
 Modified: David Gordon <dgaust@outlook.com>
 
 Licence: GPL v3
@@ -12,6 +13,8 @@ Copyright: Chris Jewell 2016-2018
 PyTado is a Python module implementing an interface to the Tado web API.  It allows a user to interact with their Tado airconditioning system for the purposes of monitoring or controlling their air conditioner, beyond what Tado themselves currently offer.
 
 It is hoped that this module might be used by those who wish to tweak their Tado systems, and further optimise their  setups.
+
+This is a modified version of hte system used to control the TADO Thermostats and is intended to work only with the TADO AC.
 
 Disclaimer
 ----------
