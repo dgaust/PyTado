@@ -20,7 +20,7 @@ requirements = [x.strip() for x in open(here('requirements.txt')).readlines()]
 
 setup(name='python-tadoac',
       version='0.0.2',
-      description='PyTado from chrism0dwk, modfied by w.malgadey, modified by dgaust for AC',
+      description='PyTado modified by dgaust for AC',
       long_description=readme,
       keywords='tado',
       author='dgaust',
