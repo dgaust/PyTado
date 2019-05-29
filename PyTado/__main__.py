@@ -31,7 +31,7 @@ def get_capabilities(args):
 
 def main():
     """Main method for the script."""
-    parser = argparse.ArgumentParser(description='Pytado - Tado thermostat device control',
+    parser = argparse.ArgumentParser(description='Pytado AC - Tado AC device control',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
     required_flags = parser.add_argument_group('required arguments')
