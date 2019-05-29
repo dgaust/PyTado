@@ -18,13 +18,13 @@ if sys.argv[-1] == 'publish':
 readme = open(here('README.md')).read()
 requirements = [x.strip() for x in open(here('requirements.txt')).readlines()]
 
-setup(name='python-tado',
-      version='0.2.9',
-      description='PyTado from chrism0dwk, modfied by w.malgadey',
+setup(name='python-tadoac',
+      version='0.0.1',
+      description='PyTado from chrism0dwk, modfied by w.malgadey, modified by dgaust for AC',
       long_description=readme,
       keywords='tado',
-      author='chrism0dwk, w.malgadey',
-      author_email='chrism0dwk@gmail.com, w.malgadey@gmail.com',
+      author='chrism0dwk, w.malgadey, dgaust',
+      author_email='chrism0dwk@gmail.com, w.malgadey@gmail.com, dgaust@outlook.com',
       url='https://github.com/wmalgadey/PyTado',
       install_requires=requirements,
       license="GPL3",
