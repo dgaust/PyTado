@@ -15,9 +15,9 @@ from http.cookiejar import CookieJar
 _LOGGER = logging.getLogger(__name__)
 
 
-class Tado:
+class TadoAC:
     """Interacts with a Tado AirConditioner via public API.
-    Example usage: t = Tado('me@somewhere.com', 'mypasswd')
+    Example usage: t = TadoAC('me@somewhere.com', 'mypasswd')
                    t.getClimate(1) # Get climate, zone 1.
     """
 
