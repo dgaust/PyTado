@@ -3,14 +3,15 @@ PyTado -- Pythonize your central heating
 
 Author: Chris Jewell <chrism0dwk@gmail.com>  
 Modified: Wolfgang Malgadey <wolfgang@malgadey.de>
+Modified: David Gordon <dgaust@outlook.com>
 
 Licence: GPL v3
 
 Copyright: Chris Jewell 2016-2018
 
-PyTado is a Python module implementing an interface to the Tado web API.  It allows a user to interact with their Tado heating system for the purposes of monitoring or controlling their heating system, beyond what Tado themselves currently offer.
+PyTado is a Python module implementing an interface to the Tado web API.  It allows a user to interact with their Tado airconditioning system for the purposes of monitoring or controlling their air conditioner, beyond what Tado themselves currently offer.
 
-It is hoped that this module might be used by those who wish to tweak their Tado systems, and further optimise their heating setups.
+It is hoped that this module might be used by those who wish to tweak their Tado systems, and further optimise their  setups.
 
 Disclaimer
 ----------
@@ -21,7 +22,7 @@ Example basic usage
 
     >>> from PyTado.interface import Tado
     >>> t = Tado('my@username.com', 'mypassword')
-    >>> climate = t.getClimate(zone=1)
+    >>> climate = t.getClimate(zone=#)
 
 Development
 -----------
