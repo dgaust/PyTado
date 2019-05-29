@@ -16,7 +16,7 @@ _LOGGER = logging.getLogger(__name__)
 
 
 class Tado:
-    """Interacts with a Tado thermostat via public API.
+    """Interacts with a Tado AirConditioner via public API.
     Example usage: t = Tado('me@somewhere.com', 'mypasswd')
                    t.getClimate(1) # Get climate, zone 1.
     """
@@ -245,7 +245,8 @@ class Tado:
         data = self._apiCall(cmd, "DELETE", {}, True)
         return data
 
-    def setZoneOverlay(self, zone, overlayMode, setTemp=None, duration=None, deviceType='HEATING', power="ON", mode=None):
+    # add option to include fanspeed here
+    def setZoneOverlay(self, zone, overlayMode, setTemp=None, duration=None, deviceType='HEATING', power="ON", mode=None, addFanSpeed=False):
         """set current overlay for a zone"""
         # pylint: disable=C0103
 
@@ -255,7 +256,8 @@ class Tado:
             "setting" : {},
             "termination" : {}
         }
-
+        
+        # Just Change Power
         if setTemp is None:
             post_data["setting"] = {
                 "type": deviceType,
@@ -265,6 +267,7 @@ class Tado:
             post_data["setting"] = {
                 "type": deviceType,
                 "power": power,
+                "fanSpeed" : "AUTO",
                 "mode": mode,
                 "temperature":{
                     "celsius": setTemp
@@ -274,6 +277,7 @@ class Tado:
             post_data["setting"] = {
                 "type": deviceType,
                 "power": power,
+                "fanSpeed" : "AUTO",
                 "temperature":{
                     "celsius": setTemp
                 }
