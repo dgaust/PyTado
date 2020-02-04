@@ -246,7 +246,7 @@ class TadoAC:
         return data
 
     # add option to include fanspeed here
-    def setZoneOverlay(self, zone, overlayMode, setTemp=None, duration=None, deviceType='HEATING', power="ON", mode=None, addFanSpeed=False):
+     def setZoneOverlay(self, zone, overlayMode, setTemp=None, duration=None, deviceType='AIR_CONDITIONING', power="ON", mode=None, isFanSpeedSupported = False, SetSpeed = "AUTO"):
         """set current overlay for a zone"""
         # pylint: disable=C0103
 
@@ -256,19 +256,35 @@ class TadoAC:
             "setting" : {},
             "termination" : {}
         }
-        
-        # Just Change Power
+
         if setTemp is None:
             post_data["setting"] = {
                 "type": deviceType,
                 "power": power
             }
-        elif mode is not None:
+        elif mode is not None and isFanSpeedSupported is False:
+            post_data["setting"] = {
+                "type": deviceType, 
+                "power": power,
+                "mode": mode,
+                "temperature":{
+                    "celsius": setTemp
+                }
+            }
+        elif mode is not None and isFanSpeedSupported is True:
+            post_data["setting"] = {
+                "type": deviceType, 
+                "power": power,
+                "fanSpeed" : SetSpeed,
+                "mode": mode,
+                "temperature":{
+                    "celsius": setTemp
+                }
+            }
+        elif isFanSpeedSupported is True:
             post_data["setting"] = {
                 "type": deviceType,
                 "power": power,
-                "fanSpeed" : "AUTO",
-                "mode": mode,
                 "temperature":{
                     "celsius": setTemp
                 }
@@ -277,17 +293,16 @@ class TadoAC:
             post_data["setting"] = {
                 "type": deviceType,
                 "power": power,
-                "fanSpeed" : "AUTO",
                 "temperature":{
                     "celsius": setTemp
                 }
             }
 
         post_data["termination"] = {"type" : overlayMode}
-
+        
         if duration is not None:
             post_data["termination"]["durationInSeconds"] = duration
-
+        _LOGGER.error(post_data)
         data = self._apiCall(cmd, "PUT", post_data)
         return data
 
