@@ -285,6 +285,7 @@ class TadoAC:
             post_data["setting"] = {
                 "type": deviceType,
                 "power": power,
+                "fanSpeed" : SetSpeed,
                 "temperature":{
                     "celsius": setTemp
                 }
